@@ -230,7 +230,7 @@ que está localizado na NUTS III da Área Metropolitana do Porto, na NUTS II do 
 Portugal Continental.
 O município abrange uma <strong>área de 41,42 km2</strong> e encontra-se subdividido em <strong>7 freguesias</strong>, nomeadamente: Aldoar, Foz do Douro e Nevogilde; Lordelo do Ouro e Massarelos; Ramalde; Cedofeita, Ildefonso, Sé, Miragaia, Nicolau e Vitória; Bonfim, Campanhã e Paranhos. Em 2021,
 a população residente no município compreendia  os <strong>231 800 residentes</strong>, com uma densidade populacional
-de <strong>5 596 habitantes</strong> por km2 (INE, 2024)</p>
+de <strong>5 596 habitantes</strong> por km2 (INE, 2024)</p>
                     </div>
                     <div class="grid grid-cols-2 gap-4 mt-8">
                         <div class="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-500 transition"><p class="text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">Área Total</p><p class="text-xl font-bold text-white">41.42 km²</p></div>
@@ -409,30 +409,34 @@ de <strong>5 596 habitantes</strong> por km2 (INE, 2024)</p>
                 
                 <div class="mb-10">
                     <h3 class="text-3xl font-bold text-white mb-2"></span> Inércia Térmica</h3>
-                    <p class="text-gray-400 text-lg">É a capacidade de um material ou superfície resistir a variações da temperatura quando recebe ou perde calor (Cheruy, 2017)</p>
+                    <p class="text-gray-400 text-lg">É a capacidade de um material ou superfície resistir a variações da temperatura quando recebe ou perde calor (Cheruy, 2017)</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-12 mb-16">
-                    <div class="bg-slate-900 p-6 rounded-2xl border border-slate-700 hover:border-yellow-500 transition group cursor-pointer" onclick="openLightbox('img/Aquecimento.jpg', 'Taxa de Aquecimento', 'Velocidade a que a superfície ganha temperatura.')">
-                        <div class="flex items-center justify-between mb-4">
-                            <h4 class="text-xl font-bold text-yellow-400">Taxa de Aquecimento</h4>
-                            <i data-feather="sun" class="text-yellow-500"></i>
+                <div class="bg-slate-900 rounded-2xl border border-slate-700 overflow-hidden mb-16 shadow-2xl">
+                    <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-700">
+                        <div class="p-8 group cursor-pointer hover:bg-slate-800/50 transition duration-300" onclick="openDualLightbox()">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="text-xl font-bold text-yellow-400">Taxa de Aquecimento</h4>
+                                <i data-feather="sun" class="text-yellow-500"></i>
+                            </div>
+                            <div class="h-64 rounded-xl overflow-hidden mb-4 relative">
+                                <div class="absolute inset-0 bg-yellow-500/10 opacity-0 group-hover:opacity-100 transition z-10"></div>
+                                <img src="img/Aquecimento.jpg" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed"></p>
                         </div>
-                        <div class="h-64 rounded-lg overflow-hidden mb-4">
-                            <img src="img/Aquecimento.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <p class="text-sm text-gray-400 leading-relaxed"></p>
-                    </div>
 
-                    <div class="bg-slate-900 p-6 rounded-2xl border border-slate-700 hover:border-cyan-500 transition group cursor-pointer" onclick="openLightbox('img/arrefecimento.jpg', 'Taxa de Arrefecimento', 'Capacidade de dissipação de calor.')">
-                        <div class="flex items-center justify-between mb-4">
-                            <h4 class="text-xl font-bold text-cyan-400">Taxa de Arrefecimento</h4>
-                            <i data-feather="moon" class="text-cyan-500"></i>
+                        <div class="p-8 group cursor-pointer hover:bg-slate-800/50 transition duration-300" onclick="openDualLightbox()">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="text-xl font-bold text-cyan-400">Taxa de Arrefecimento</h4>
+                                <i data-feather="moon" class="text-cyan-500"></i>
+                            </div>
+                            <div class="h-64 rounded-xl overflow-hidden mb-4 relative">
+                                <div class="absolute inset-0 bg-cyan-500/10 opacity-0 group-hover:opacity-100 transition z-10"></div>
+                                <img src="img/arrefecimento.jpg" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed"></p>
                         </div>
-                        <div class="h-64 rounded-lg overflow-hidden mb-4">
-                            <img src="img/arrefecimento.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <p class="text-sm text-gray-400 leading-relaxed"></p>
                     </div>
                 </div>
 
@@ -487,11 +491,36 @@ de <strong>5 596 habitantes</strong> por km2 (INE, 2024)</p>
     <div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 hidden flex items-center justify-center p-4 backdrop-blur-sm" onclick="closeLightbox()">
         <button class="absolute top-6 right-6 text-white hover:text-red-500 transition"><i data-feather="x" class="w-10 h-10"></i></button>
         <div class="max-w-7xl w-full flex flex-col items-center" onclick="event.stopPropagation()">
-            <img id="lightbox-img" src="" class="max-h-[80vh] rounded-lg shadow-2xl border border-slate-700">
-            <div class="mt-6 text-center">
-                <h3 id="lightbox-title" class="text-2xl font-bold text-white"></h3>
-                <p id="lightbox-desc" class="text-gray-300 mt-2 text-lg"></p>
+            
+            <div id="lightbox-content-single" class="text-center w-full">
+                <img id="lightbox-img" src="" class="max-h-[80vh] rounded-lg shadow-2xl border border-slate-700 mx-auto">
+                <div class="mt-6 text-center">
+                    <h3 id="lightbox-title" class="text-2xl font-bold text-white"></h3>
+                    <p id="lightbox-desc" class="text-gray-300 mt-2 text-lg"></p>
+                </div>
             </div>
+
+            <div id="lightbox-content-dual" class="hidden w-full flex flex-col items-center max-w-[95vw]">
+                <div class="flex flex-col md:flex-row gap-4 w-full justify-center items-center">
+                    <div class="flex-1 w-full md:w-1/2">
+                        <div class="relative rounded-lg overflow-hidden border-2 border-yellow-500 shadow-xl">
+                            <img src="img/Aquecimento.jpg" class="w-full object-cover max-h-[70vh]">
+                            <div class="absolute top-2 left-2 bg-black/80 px-3 py-1 rounded text-yellow-400 font-bold text-sm border border-yellow-500/50">Taxa de Aquecimento</div>
+                        </div>
+                    </div>
+                    <div class="flex-1 w-full md:w-1/2">
+                        <div class="relative rounded-lg overflow-hidden border-2 border-cyan-500 shadow-xl">
+                            <img src="img/arrefecimento.jpg" class="w-full object-cover max-h-[70vh]">
+                            <div class="absolute top-2 left-2 bg-black/80 px-3 py-1 rounded text-cyan-400 font-bold text-sm border border-cyan-500/50">Taxa de Arrefecimento</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 text-center">
+                    <h3 class="text-2xl font-bold text-white">Comparação de Inércia Térmica</h3>
+                    <p class="text-gray-300 mt-2 text-lg">Visualização lado-a-lado da capacidade de retenção e libertação de calor.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -616,9 +645,28 @@ de <strong>5 596 habitantes</strong> por km2 (INE, 2024)</p>
         // --- LÓGICA DO LIGHTBOX ---
         function openLightbox(imgSrc, title, desc) {
             const lightbox = document.getElementById('lightbox');
+            const singleContent = document.getElementById('lightbox-content-single');
+            const dualContent = document.getElementById('lightbox-content-dual');
+
+            // Mostrar modo simples
+            singleContent.classList.remove('hidden');
+            dualContent.classList.add('hidden');
+
             document.getElementById('lightbox-img').src = imgSrc;
             document.getElementById('lightbox-title').innerText = title;
             document.getElementById('lightbox-desc').innerText = desc;
+            lightbox.classList.remove('hidden');
+        }
+
+        function openDualLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const singleContent = document.getElementById('lightbox-content-single');
+            const dualContent = document.getElementById('lightbox-content-dual');
+
+            // Mostrar modo dual
+            singleContent.classList.add('hidden');
+            dualContent.classList.remove('hidden');
+
             lightbox.classList.remove('hidden');
         }
 
@@ -627,6 +675,4 @@ de <strong>5 596 habitantes</strong> por km2 (INE, 2024)</p>
         }
     </script>
 </body>
-
 </html>
-
