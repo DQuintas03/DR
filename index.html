@@ -195,7 +195,7 @@
                             </tr>
                             <tr class="bg-slate-200 text-slate-700 text-xs font-bold uppercase">
                                 <th class="py-3 px-6 w-1/3 border-r border-slate-300">Questões de partida</th>
-                                <th class="py-3 px-6 w-2/3">Metodologia</th>
+                                <th class="py-3 px-6 w-2/3">Dados e Métodos</th>
                             </tr>
                         </thead>
                         <tbody class="bg-white text-slate-600">
@@ -213,6 +213,22 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16">
+                    <div class="text-center mb-10">
+                        <div class="inline-block px-3 py-1 mb-2 text-xs font-semibold tracking-wider text-purple-400 uppercase bg-purple-500/10 rounded-full border border-purple-500/20">Workflow</div>
+                        <h3 class="text-2xl font-bold text-white">Esquema Metodológico</h3>
+                        <p class="text-gray-400 text-sm">Fluxo de processamento de dados.</p>
+                    </div>
+
+                    <div class="w-full flex justify-center">
+                        <div class="relative max-w-5xl w-full">
+                            <img src="img/m.jpg" alt="Esquema Metodológico" class="w-full h-auto rounded-xl shadow-2xl border border-slate-700 bg-slate-800/50 p-2">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -242,7 +258,7 @@ de <strong>5 596 habitantes</strong> por km2 (INE, 2024)</p>
                         <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                         <div class="relative rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-black aspect-[4/3]">
                             <img src="img/equadramento.jpg" alt="Mapa de Enquadramento" class="w-full h-full object-cover transform transition duration-700 group-hover:scale-105">
-                            <div class="absolute bottom-4 right-4 bg-black/80 backdrop-blur px-3 py-1 rounded border border-white/10 text-xs font-mono text-blue-300">EPSG: 32629 (UTM 29N)</div>
+                            <div class="absolute bottom-4 right-4 bg-black/80 backdrop-blur px-3 py-1 rounded border border-white/10 text-xs font-mono text-blue-300">EPSG: 3763    </div>
                         </div>
                         <p class="text-center text-xs text-gray-500 mt-3 italic">Figura 1: Localização da área de estudo na zona costeira do Norte de Portugal.</p>
                     </div>
@@ -390,7 +406,7 @@ de <strong>5 596 habitantes</strong> por km2 (INE, 2024)</p>
 
                 <div>
                     <h5 class="text-white font-bold text-lg mb-6 pl-4 border-l-4 border-green-500 uppercase tracking-widest">O Ciclo Completo (MODIS)</h5>
-                    <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-600 shadow-2xl relative group cursor-pointer hover:border-green-500 transition duration-300" onclick="openLightbox('img/1.jpeg', 'Ciclo Diário MODIS', 'As 4 passagens do satélite (10:30, 13:30, 22:30, 01:30).')">
+                    <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-600 shadow-2xl relative group cursor-pointer hover:border-green-500 transition duration-300" onclick="openLightbox('img/1.jpeg', 'Ciclo Diário MODIS', 'As 4 passagens ao longo do dia (10:30, 13:30, 22:30, 01:30).')">
                         <div class="h-[600px] relative w-full"> 
                             <img src="img/1.jpeg" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-500">
                             
@@ -442,9 +458,9 @@ de <strong>5 596 habitantes</strong> por km2 (INE, 2024)</p>
 
                 <div>
                     <h5 class="text-white font-bold text-lg mb-6 pl-4 border-l-4 border-orange-500 uppercase tracking-widest">A variação completa (24 Horas)</h5>
-                    <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-600 shadow-2xl relative group cursor-pointer hover:border-orange-500 transition duration-300" onclick="openLightbox('img/2.jpeg', 'Dinâmica de Fluxos Térmicos', 'Comparação das taxas de aquecimento e arrefecimento em 4 períodos do dia.')">
+                    <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-600 shadow-2xl relative group cursor-pointer hover:border-orange-500 transition duration-300" onclick="openLightbox('img/2.jpg', 'Dinâmica de Fluxos Térmicos', 'Comparação das taxas de aquecimento e arrefecimento em 4 períodos do dia.')">
                         <div class="h-[600px] relative w-full"> 
-                            <img src="img/2.jpeg" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-500">
+                            <img src="img/2.jpg" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-500">
                             
                             <div class="absolute bottom-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent p-8 pt-20">
                                 <h4 class="text-2xl font-bold text-white">Amplitude e Taxas de Variação</h4>
@@ -456,34 +472,7 @@ de <strong>5 596 habitantes</strong> por km2 (INE, 2024)</p>
                 </div>
             </div>
 
-            <div class="relative pl-24 md:pl-32">
-                <div class="absolute left-8 top-0 w-12 h-12 rounded-full bg-green-600 flex items-center justify-center font-bold text-xl border-4 border-slate-800 z-20 shadow-[0_0_20px_rgba(22,163,74,0.5)]">IV</div>
-                
-                <div class="mb-10">
-                    <h3 class="text-3xl font-bold text-white mb-2">Reguladores Naturais <span class="text-green-500"></h3>
-                    <p class="text-gray-400 text-lg"></p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="group relative overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox('img/nvdi.jpg', 'NDVI', 'Índice de Diferença Normalizada de Vegetação.')">
-                        <div class="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition z-10"></div>
-                        <img src="img/nvdi.jpg" class="absolute inset-0 w-full h-full object-cover">
-                        <div class="relative z-20 p-6 h-48 flex flex-col justify-end">
-                            <h4 class="text-2xl font-bold text-green-400 mb-1">NDVI</h4>
-                            <p class="text-white text-sm"></p>
-                        </div>
-                    </div>
-
-                    <div class="group relative overflow-hidden rounded-xl cursor-pointer" onclick="openLightbox('img/NDMI.jpg', 'NDMI', 'Índice de Humidade da Vegetação.')">
-                        <div class="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition z-10"></div>
-                        <img src="img/NDMI.jpg" class="absolute inset-0 w-full h-full object-cover">
-                        <div class="relative z-20 p-6 h-48 flex flex-col justify-end">
-                            <h4 class="text-2xl font-bold text-cyan-400 mb-1">NDMI</h4>
-                            <p class="text-white text-sm"></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
 
         </div>
     </section>
